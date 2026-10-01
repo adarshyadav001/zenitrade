@@ -1,0 +1,1 @@
+package com.zenitrade.repository; import com.zenitrade.entity.Trade; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface TradeRepository extends JpaRepository<Trade,Long>{ List<Trade> findByUserIdOrderByExecutedAtDesc(Long id); }

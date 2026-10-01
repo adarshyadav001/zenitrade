@@ -1,0 +1,1 @@
+package com.zenitrade.repository; import com.zenitrade.entity.WatchlistItem; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface WatchlistRepository extends JpaRepository<WatchlistItem,Long>{ List<WatchlistItem> findByUserId(Long id); Optional<WatchlistItem> findByUserIdAndStockId(Long u,Long s); }

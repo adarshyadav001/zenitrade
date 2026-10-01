@@ -1,0 +1,1 @@
+package com.zenitrade.repository; import com.zenitrade.entity.Stock; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface StockRepository extends JpaRepository<Stock,Long>{ Optional<Stock> findBySymbolIgnoreCase(String symbol); List<Stock> findBySymbolContainingIgnoreCaseOrCompanyNameContainingIgnoreCase(String a,String b); }

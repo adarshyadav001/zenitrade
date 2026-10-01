@@ -1,0 +1,3 @@
+package com.zenitrade.entity;
+import jakarta.persistence.*; import java.math.BigDecimal;
+@Entity @Table(name="stocks") public class Stock { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) public Long id; @Column(unique=true) public String symbol; @Column(name="company_name") public String companyName; public String sector; @Column(name="current_price") public BigDecimal currentPrice; @Column(name="previous_close") public BigDecimal previousClose; @Column(name="market_cap") public String marketCap; @Column(name="pe_ratio") public BigDecimal peRatio; public BigDecimal roe; @Column(name="dividend_yield") public BigDecimal dividendYield; }

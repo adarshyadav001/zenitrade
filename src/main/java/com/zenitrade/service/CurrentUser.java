@@ -1,0 +1,2 @@
+package com.zenitrade.service; import com.zenitrade.entity.User; import com.zenitrade.repository.UserRepository; import org.springframework.security.core.context.SecurityContextHolder; import org.springframework.stereotype.Service;
+@Service public class CurrentUser { private final UserRepository users; public CurrentUser(UserRepository users){this.users=users;} public User get(){Object p=SecurityContextHolder.getContext().getAuthentication().getPrincipal();return users.findById((Long)p).orElseThrow(()->new IllegalArgumentException("User not found"));} }

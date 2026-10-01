@@ -1,0 +1,1 @@
+package com.zenitrade.repository; import com.zenitrade.entity.User; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface UserRepository extends JpaRepository<User,Long>{ Optional<User> findByEmail(String email); }

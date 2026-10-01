@@ -1,0 +1,3 @@
+package com.zenitrade.entity;
+import jakarta.persistence.*; import java.math.BigDecimal; import java.time.Instant;
+@Entity @Table(name="trades") public class Trade { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) public Long id; @ManyToOne public User user; @ManyToOne public Stock stock; @Column(name="trade_type") public String tradeType; @Column(name="product_type") public String productType; public int quantity; public BigDecimal price; public BigDecimal brokerage; @Column(name="total_amount") public BigDecimal totalAmount; @Column(name="executed_at") public Instant executedAt=Instant.now(); }

@@ -1,0 +1,1 @@
+package com.zenitrade.repository; import com.zenitrade.entity.*; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface HoldingRepository extends JpaRepository<Holding,Long>{ List<Holding> findByUserId(Long id); Optional<Holding> findByUserIdAndStockIdAndProductType(Long u,Long s,String p); }
